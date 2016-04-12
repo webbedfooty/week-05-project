@@ -1,0 +1,35 @@
+### CLUBS ###
+
+# INDEX
+
+
+
+# NEW
+
+
+
+#CREATE
+
+
+
+# SHOW
+
+
+
+#EDIT
+
+
+
+# UPDATE
+
+
+
+# DELETE
+
+
+
+# ALL SPONSORS FOR A CLUB
+
+
+
+# ALL PLAYERS FOR A CLUB

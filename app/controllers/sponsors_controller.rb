@@ -1,0 +1,31 @@
+### SPONSORS ###
+
+# INDEX
+
+
+
+# NEW
+
+
+
+#CREATE
+
+
+
+# SHOW
+
+
+
+#EDIT
+
+
+
+# UPDATE
+
+
+
+# DELETE
+
+
+
+# ALL CLUBS FOR A SPONSOR

@@ -1,0 +1,31 @@
+### PLAYERS ###
+
+# INDEX
+
+
+
+# NEW
+
+
+
+#CREATE
+
+
+
+# SHOW
+
+
+
+#EDIT
+
+
+
+# UPDATE
+
+
+
+# DELETE
+
+
+
+# ALL PLAYERS FOR A CLUB
