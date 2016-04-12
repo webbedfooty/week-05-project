@@ -1,0 +1,8 @@
+<h1>Sponsors Index</h1>
+<ul>
+  <% @sponsors.each do |s| %>
+    <li><a href="/sponsors/<%= s.id %>"><%= s.name %></a></li>
+  <% end %>
+</ul>
+<p><a href="/sponsors/new">New Sponsor</a></p>
+<p><a href="/">Back Home</a></p>

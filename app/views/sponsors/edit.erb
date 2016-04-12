@@ -1,0 +1,26 @@
+<h1>Edit <%= @sponsor.name %></h1>
+
+<form action="/sponsors/<%= @sponsor.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <div>
+    Name:
+    <input type="text" name="name" value="<%= @sponsor.name %>">
+  </div>
+  <div>
+    <input type="submit" value="Update Sponsor">
+  </div>
+</form>
+
+<% if @sponsors.count > 1 %>
+  <h2>Delete This Sponsor?</h2>
+  <form action="/sponsors/<%= @sponsor.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <select name="new_sponsor_id">
+      <% @sponsors.each do |s| %>
+        <% unless s.id == @sponsor.id %>
+          <option value="<%= s.id %>"><%= s.name %></option>
+        <% end %>
+      <% end %>
+    <input type="submit" value="Delete This Sponsor!">
+  </form>
+<% end %>
