@@ -2,6 +2,7 @@
 <ul>
   <% @clubs.each do |c| %>
     <li><a href="/clubs/<%= c.id %>"><%= c.name %></a></li>
+    <li><a href="/clubs/<%= c.id %>"><%= c.city %></a></li>
   <% end %>
 </ul>
 <p><a href="/clubs/new">New Club</a></p>

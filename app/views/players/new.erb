@@ -1,0 +1,18 @@
+<h1>New Player</h1>
+<form action="/players" method="post">
+  <div class="form-group">
+    Player Name:
+    <input type="text" name="name" value="<%= @player.name %>">
+  </div>
+  <div class="form-group">
+    Player Value:
+    <input type="integer" name="name" value="<%= @player.value %>">
+  </div>
+  <div class="form-group">
+    <input type="submit" value="New Player" class="btn btn-default">
+  </div>
+</form>
+<p><a href="/players">Back to Players</a></p>
+
+</body>
+</html>

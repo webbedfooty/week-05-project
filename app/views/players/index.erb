@@ -1,0 +1,9 @@
+<h1>Players Index</h1>
+<ul>
+  <% @players.each do |p| %>
+    <li><a href="/players/<%= p.id %>"><%= p.name %></a></li>
+    <li><a href="/players/<%= p.id %>"><%= p.value %></a></li>
+  <% end %>
+</ul>
+<p><a href="/sponsors/new">New Player</a></p>
+<p><a href="/">Back Home</a></p>
