@@ -1,0 +1,18 @@
+<h1>New Club</h1>
+<form action="/clubs" method="post">
+  <div class="form-group">
+    Club Name:
+    <input type="text" name="name" value="<%= @club.name %>">
+  </div>
+  <div class="form-group">
+    City:
+    <input type="text" name="city" value="<%= @club.city %>">
+  </div>
+  <div class="form-group">
+    <input type="submit" value="New Club" class="btn btn-default">
+  </div>
+</form>
+<p><a href="/clubs">Back to Clubs</a></p>
+
+</body>
+</html>

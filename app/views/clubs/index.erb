@@ -1,0 +1,8 @@
+<h1>Clubs Index</h1>
+<ul>
+  <% @clubs.each do |c| %>
+    <li><a href="/clubs/<%= c.id %>"><%= c.name %></a></li>
+  <% end %>
+</ul>
+<p><a href="/clubs/new">New Club</a></p>
+<p><a href="/">Back Home</a></p>
