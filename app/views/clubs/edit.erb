@@ -15,17 +15,3 @@
     <input type="submit" value="Update Club">
   </div>
 </form>
-
-<% if @clubs.count > 1 %>
-  <h2>Delete This Club?</h2>
-  <form action="/clubs/<%= @club.id %>" method="post">
-    <input type="hidden" name="_method" value="delete">
-    <select name="new_club_id">
-      <% @clubs.each do |c| %>
-        <% unless c.id == @club.id %>
-          <option value="<%= c.id %>"><%= c.name %></option>
-        <% end %>
-      <% end %>
-    <input type="submit" value="Delete This Club!">
-  </form>
-<% end %>

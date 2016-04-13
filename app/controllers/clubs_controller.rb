@@ -43,7 +43,7 @@ end
 # UPDATE
 patch "/clubs/:id" do
   @club = Club.find_by_id(params['id'])
-  if @club.update_attributes(name: params['name'])
+  if @club.update_attributes(name: params['name'], city: params['city'])
     redirect to("/clubs/#{@club.id}")
   else
     erb :"clubs/edit"

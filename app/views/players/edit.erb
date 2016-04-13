@@ -15,18 +15,3 @@
     <input type="submit" value="Update Player">
   </div>
 </form>
-
-<% if @players.count > 1 %>
-  <h2>Delete This Player?</h2>
-  <form action="/players/<%= @player.id %>" method="post">
-    <input type="hidden" name="_method" value="delete">
-    <select name="new_player_id">
-      <% @players.each do |p| %>
-        <% unless p.id == @player.id %>
-          <option value="<%= p.id %>"><%= p.name %></option>
-          <option value="<%= p.id %>"><%= p.value %></option>
-        <% end %>
-      <% end %>
-    <input type="submit" value="Delete This Player!">
-  </form>
-<% end %>

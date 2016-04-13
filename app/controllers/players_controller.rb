@@ -43,7 +43,7 @@ end
 # UPDATE
 patch "/players/:id" do
   @player = Player.find_by_id(params['id'])
-  if @player.update_attributes(name: params['name'])
+  if @player.update_attributes(name: params['name'], value: params['value'])
     redirect to("/players/#{@player.id}")
   else
     erb :"players/edit"
