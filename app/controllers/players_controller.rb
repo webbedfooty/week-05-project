@@ -1,7 +1,7 @@
 ### PLAYERS ###
 
 # INDEX
-get "/playerss" do
+get "/players" do
   @players = Player.all
   erb :"players/index"
 end

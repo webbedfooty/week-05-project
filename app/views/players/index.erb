@@ -1,3 +1,9 @@
+<a href="/sponsors"> Sponsors  /   </a>
+<a href="/clubs"> Clubs  /   </a>
+<a href="/players"> Players  /   </a>
+<a href="/"> Back to Main Menu</a>
+<p></p>
+
 <h1>Players Index</h1>
 <ul>
   <% @players.each do |p| %>
@@ -5,5 +11,5 @@
     <li><a href="/players/<%= p.id %>"><%= p.value %></a></li>
   <% end %>
 </ul>
-<p><a href="/sponsors/new">New Player</a></p>
+<p><a href="/players/new">New Player</a></p>
 <p><a href="/">Back Home</a></p>
