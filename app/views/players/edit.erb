@@ -1,9 +1,3 @@
-<a href="/sponsors"> Sponsors  /   </a>
-<a href="/clubs"> Clubs  /   </a>
-<a href="/players"> Players  /   </a>
-<a href="/"> Back to Main Menu</a>
-<p></p>
-
 <h1>Edit <%= @player.name %></h1>
 
 <form action="/players/<%= @player.id %>" method="post">
@@ -14,7 +8,7 @@
   </div>
   <div>
     Value:
-    <input type="number" name="value" value="<%= @player.value %>">
+    <input type="text" name="value" value="<%= @player.value %>">
   </div>
   <div>
     <input type="submit" value="Update Player">
@@ -29,6 +23,7 @@
       <% @players.each do |p| %>
         <% unless p.id == @player.id %>
           <option value="<%= p.id %>"><%= p.name %></option>
+          <option value="<%= p.id %>"><%= p.value %></option>
         <% end %>
       <% end %>
     <input type="submit" value="Delete This Player!">

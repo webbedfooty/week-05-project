@@ -1,13 +1,7 @@
-<a href="/sponsors"> Sponsors  /   </a>
-<a href="/clubs"> Clubs  /   </a>
-<a href="/players"> Players  /   </a>
-<a href="/"> Back to Main Menu</a>
-<p></p>
-
 <h1><%= @club.name %></h1>
 
 <p><em>Name:</em> <%= @club.name %></p>
 <p><em>City:</em> <%= @club.city %></p>
 
+<p><a href="/clubs/<%= @club.id %>/edit">Edit <%= @club.name %></a></p>
 <p><a href="/clubs">Back to all Clubs</a></p>
-<p><a href="/clubs/<%= @club.id %>/edit">Edit</a></p>

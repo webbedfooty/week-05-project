@@ -52,9 +52,17 @@ end
 
 
 # DELETE
-# check scratch for delete
-# put in code for reassign_all_clubs
-#  @sponsor.reassign_all_clubs(@new_sponsor)
+delete "/sponsors/:id" do
+  @sponsor = Sponsor.find_by_id(params['id'])
+  @new_sponsor = Sponsor.find_by_id(params['new_sponsor_id'])
+
+  redirect to("/sponsors/#{sponsor.id}/edit") if @new_sponsor.nil?
+
+  @sponsor.reassign_all_clubs(@new_sponsor)
+  @sponsor.destroy
+
+  redirct to('/sponsors')
+end
 
 
 # ALL CLUBS FOR A SPONSOR
