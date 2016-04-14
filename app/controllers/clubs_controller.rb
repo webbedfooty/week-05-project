@@ -14,7 +14,7 @@ get "/clubs/new" do
 end
 
 
-#CREATE
+# CREATE
 post "/clubs" do
   @club = Club.new(params)
   if @club.save
@@ -32,7 +32,7 @@ erb :"clubs/show"
 end
 
 
-#EDIT
+# EDIT
 get "/clubs/:id/edit" do
   @club = Club.find_by_id(params['id'])
   @clubs = Club.all

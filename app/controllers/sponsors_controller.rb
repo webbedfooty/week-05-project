@@ -14,7 +14,7 @@ get "/sponsors/new" do
 end
 
 
-#CREATE
+# CREATE
 post "/sponsors" do
   @sponsor = Sponsor.new(params)
   if @sponsor.save
@@ -32,7 +32,7 @@ erb :"sponsors/show"
 end
 
 
-#EDIT
+# EDIT
 get "/sponsors/:id/edit" do
   @sponsor = Sponsor.find_by_id(params['id'])
   @sponsors = Sponsor.all
@@ -52,17 +52,12 @@ end
 
 
 # DELETE
-delete "/sponsors/:id" do
-  @sponsor = Sponsor.find_by_id(params['id'])
-  @new_sponsor = Sponsor.find_by_id(params['new_sponsor_id'])
-
-  redirect to("/sponsors/#{sponsor.id}/edit") if @new_sponsor.nil?
-
-  @sponsor.reassign_all_clubs(@new_sponsor)
-  @sponsor.destroy
-
-  redirct to('/sponsors')
-end
+# check scratch for delete
+# put in code for reassign_all_clubs
+#  @player.reassign_all_clubs(@new_player)
 
 
 # ALL CLUBS FOR A SPONSOR
+#get "sponsors/:id/clubs"
+
+#erb :"sponsor/clubs"

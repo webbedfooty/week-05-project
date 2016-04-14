@@ -14,7 +14,7 @@ get "/players/new" do
 end
 
 
-#CREATE
+# CREATE
 post "/players" do
   @player = Player.new(params)
   if @player.save
@@ -32,7 +32,7 @@ erb :"players/show"
 end
 
 
-#EDIT
+# EDIT
 get "/players/:id/edit" do
   @player = Player.find_by_id(params['id'])
   @players = Player.all
