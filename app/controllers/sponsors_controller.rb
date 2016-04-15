@@ -58,6 +58,12 @@ end
 
 
 # ALL CLUBS FOR A SPONSOR
-#get "sponsors/:id/clubs"
+get "/sponsors/:id/clubs" do
+  @sponsor = Sponsor.find_by_id(params['id'])
+  @sponsors = Sponsor.all
+  @club = Club.find_by_id(params['id'])
+  @clubs = Club.all
+  erb :"sponsors/clubs"
+end
 
 #erb :"sponsor/clubs"
