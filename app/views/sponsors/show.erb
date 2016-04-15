@@ -1,7 +1,11 @@
 <title> Sponsor </title>
 <h1><%= @sponsor.name %></h1>
 
-<p><em>Name:</em> <%= @sponsor.name %></p>
+<ul>
+  <% @clubs.each do |c| %>
+  <li><%= c.name %></li>
+  <% end %>
+</ul>
 
 <p><a href="/sponsors/<%= @sponsor.id %>/edit">Edit <%= @sponsor.name %></a></p>
 <p><a href="/sponsors">Back to all Sponsors</a></p>

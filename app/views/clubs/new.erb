@@ -1,19 +1,28 @@
 <title> da Clubs</title>
+
+<% if @club.errors.any? %>
+  <div>
+    <h2>Errors:</h2>
+    <ul>
+      <% @club.errors.full_messages.each do |c| %>
+        <li><%= c %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <h1>New Club</h1>
 <form action="/clubs" method="post">
   <div class="form-group">
     Club Name:
-    <input type="text" name="name" value="<%= @club.name %>">
+    <input type="text" class="form-control" name="name" value="<%= @club.name %>">
   </div>
   <div class="form-group">
     City:
-    <input type="text" name="city" value="<%= @club.city %>">
+    <input type="text" class="form-control" name="city" value="<%= @club.city %>">
   </div>
   <div class="form-group">
     <input type="submit" value="New Club" class="btn btn-default">
   </div>
 </form>
 <p><a href="/clubs">Back to Clubs</a></p>
-
-</body>
-</html>

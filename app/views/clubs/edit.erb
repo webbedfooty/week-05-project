@@ -1,4 +1,16 @@
 <title> da Clubs</title>
+
+<% if @club.errors.any? %>
+  <div>
+    <h2>Errors:</h2>
+    <ul>
+      <% @club.errors.full_messages.each do |c| %>
+        <li><%= c %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <h1>Edit <%= @club.name %></h1>
 
 <form action="/clubs/<%= @club.id %>" method="post">
@@ -12,8 +24,11 @@
     <input type="text" name="city" value="<%= @club.city %>">
   </div>
   <div>
-    Sponsor:
+    Sponsors:
+      <% @club.sponsors.each do |s| %>
     <input type="text" name="sponsor" value="<%= @club.sponsor %>">
+    <li><%= s.name %></li>
+    <% end %>
   </div>
   <div>
   <div>

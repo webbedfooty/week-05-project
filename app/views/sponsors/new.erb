@@ -1,4 +1,16 @@
 <title> Sponsor </title>
+
+<% if @sponsor.errors.any? %>
+  <div>
+    <h2>Errors:</h2>
+    <ul>
+      <% @sponsor.errors.full_messages.each do |s| %>
+        <li><%= s %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <h1>New Sponsor</h1>
 <form action="/sponsors" method="post">
   <div class="form-group">
