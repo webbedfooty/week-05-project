@@ -57,13 +57,36 @@ end
 #  @player.reassign_all_clubs(@new_player)
 
 
-# ALL CLUBS FOR A SPONSOR
-get "/sponsors/:id/clubs" do
+# SPONSORS CLUB
+get '/sponsors/:id/clubs' do
   @sponsor = Sponsor.find_by_id(params['id'])
-  @sponsors = Sponsor.all
-  @club = Club.find_by_id(params['id'])
-  @clubs = Club.all
+  @clubs = @sponsor.clubs
   erb :"sponsors/clubs"
 end
 
-#erb :"sponsor/clubs"
+
+get '/sponsors/:id/clubs_sponsors' do
+  @sponsor = Sponsor.find_by_id(params['id'])
+  @clubs_sponsors = ClubsSponsors.all
+  erb :"clubs/clubs_sponsors"
+end
+
+
+# Adding a club to a sponsor ??
+post '/sponsors/:id/clubs/add' do
+  @sponsor = Sponsor.find_by_id(params['id'])
+  @club = Club.find_by_id(params['sponsor_id'])
+
+  @sponsor.clubs << @club
+  redirect to("/sponsors/#{@sponsor.id}/clubs")
+end
+
+
+# Removing a club to a sponsor ??
+post '/sponsors/:id/clubs/remove' do
+  @sponsor = Sponsor.find_by_id(params['id'])
+  @club = Club.find_by_id(params['sponsor_id'])
+
+  @sponsor.clubs.delete(@sponsor.clubs)
+  redirect to("/sponsors/#{@sponsor.id}/clubs_sponsors")
+end
