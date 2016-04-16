@@ -26,7 +26,7 @@
   <div>
     Sponsors:
       <% @club.sponsors.each do |s| %>
-    <input type="text" name="sponsor" value="<%= @club.sponsor %>">
+    <input type="text" name="sponsor" value="<%= s.name %>">
     <li><%= s.name %></li>
     <% end %>
   </div>

@@ -5,5 +5,28 @@
 <p><em>City:</em> <%= @club.city %></p>
 <p><em>Sponsor:</em> <%= @club.sponsors %></p>
 
+
+<h3>Sponsors</h3>
+<ul>
+  <% @sponsors.each do |s| %>
+    <li><%= s.name %>:
+      <div>
+        <% if @club.sponsors.include?(s) %>
+          <form action="/clubs/<%= @club.id %>/sponsors" method="post">
+            <input type="hidden" name="_method" value="patch">
+            <input type="hidden" name="sponsor_id" value="<%= s.id %>">
+            <input type="submit" value="Remove This Sponsor">
+          </form>
+        <% else %>
+          <form action="/clubs/<%= @club.id %>/sponsors" method="post">
+            <input type="hidden" name="_method" value="patch">
+            <input type="hidden" name="sponsor_id" value="<%= s.id %>">
+            <input type="submit" value="Add This Sponsor">
+          </form>
+        <% end %>
+      </div>
+    </li>
+  <% end %>
+</ul>
 <p><a href="/clubs/<%= @club.id %>/edit">Edit <%= @club.name %></a></p>
 <p><a href="/clubs">Back to all Clubs</a></p>

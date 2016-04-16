@@ -32,11 +32,36 @@ get "/clubs/:id" do
 erb :"clubs/show"
 end
 
+#-------------------------------
+# SPONSORS
+get "/clubs/:id/sponsors" do
+  @club = Club.find_by_id(params['id'])
+  @sponsors = Sponsor.all
+  erb :"clubs/sponsors"
+end
+
+patch "/clubs/:id/remove-sponsor" do
+  @club = Club.find_by_id(params['id'])
+  @sponsor = Sponsor.find_by_id(params['sponsor_id'])
+
+  @club.sponsors.delete(@sponsor)
+
+  redirect to("/clubs/#{ @club.id }")
+end
+
+patch "/clubs/:id/sponsors" do
+  @club = Club.find_by_id(params['id'])
+  @sponsor = Sponsor.find_by_id(params['sponsor_id'])
+
+  @club.sponsors << @sponsor
+
+  redirect to("/clubs/#{ @club.id }")
+end
+#-------------------------------
 
 # EDIT
 get "/clubs/:id/edit" do
   @club = Club.find_by_id(params['id'])
-#  @clubs = Club.all
   erb :"clubs/edit"
 end
 
